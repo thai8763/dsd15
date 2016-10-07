@@ -11,8 +11,11 @@ use App\Course;
 class CourseController extends Controller
 {
     //
-    public function index() {
+    public function index($name) {
         $courses = Course::all();
-        return view("home") -> with("courses", $courses);
+        return view("pages.course") -> with([
+            'name' => $name,
+            'courses' => $courses
+        ]);
     }
 }

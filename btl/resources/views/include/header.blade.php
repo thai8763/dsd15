@@ -1,4 +1,4 @@
-<header class="navbar navbar-default" style="margin-bottom: 0">
+<header class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
 
@@ -17,16 +17,10 @@
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url('/home') }}"> Home </a></li>
-                <li><a href=""> Course List </a></li>
-                <li><a href=""> Contact </a></li>
-            </ul>
 
             <!-- Search -->
             <form class="navbar-form navbar-left">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Tìm kiếm" size="70">
                 <button type="submit" class="btn btn-info"> <span class="glyphicon glyphicon-search"></span></button>
             </form>
 
@@ -34,8 +28,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                <li><a href="{{ url('/login') }}"> <span class="glyphicon glyphicon-user"></span> Login </a></li>
-                <li><a href="{{ url('/register') }}"> <span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                <li><a href="{{ url('/login') }}"> <span class="glyphicon glyphicon-user"></span> Đăng nhập </a></li>
+                <li><a href="{{ url('/register') }}"> <span class="glyphicon glyphicon-pencil"></span> Đăng ký </a></li>
                 @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -43,13 +37,13 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href=""> My Profile </a></li>
+                        <li><a href=""> Trang cá nhân </a></li>
                         <li class="divider"></li>
                         <li>
                             <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Thoát
                             </a>
 
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST">
@@ -65,9 +59,11 @@
 </header>
 
 <!-- banner recommend app -->
+@if(Auth::guest())
 <div class="jumbotron" style="background-color: darkviolet; color: white;">
     <div class="container">
         <h1> Bách Khoa Drive </h1>
         <p> Đây là ứng dụng lưu trữ tài liệu học tập dành cho các sinh viên Bách Khoa </p>
     </div>
 </div>
+@endif

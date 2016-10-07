@@ -1,4 +1,4 @@
-<footer style="background-color: darkviolet; color: white">
+<footer>
     <hr/>
     <div class="container">
         <div class="row">
@@ -16,9 +16,6 @@
                 <a href="https://www.youtube.com/"> <img src=" {{url('images/youtube-icon.png')}} " alt="fb" /> </a>
                 <a href=""> <img src=" {{url('images/rss-icon.png')}} " alt="fb" /> </a>
                 <a href=""> <img src=" {{url('images/g-icon.png')}} " alt="fb" /> </a>
-            </div>
-            <div class="col-sm-7">
-                <img src=" {{url('images/elearning.gif')}} "/>
             </div>
         </div>
     </div>

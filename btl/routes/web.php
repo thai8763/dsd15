@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -9,14 +9,20 @@
 | by your application. Just tell Laravel the URIs it should respond
 | to using a Closure or controller method. Build something great!
 |
-*/
 
-Route::get('/', function () {
-    return view('home');
-});
 
-Auth::routes();
-
+/**
+ * xử lý trang chủ
+ */
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
-Route::get('/course', 'CourseController@index');
+/**
+ * xử lý đăng nhập, đăng ký
+ */
+Auth::routes();
+
+/**
+ * drive cho từng môn học
+ */
+Route::get('/course/{name}', 'CourseController@index');
