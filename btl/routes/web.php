@@ -23,6 +23,17 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 /**
- * drive cho từng môn học
+ * hiển thị danh mục tài liệu từng môn học
  */
-Route::get('/course/{name}', 'CourseController@index');
+Route::get('/course/{courseID}/my-document/folder/{parentFolderID}', 'CourseController@showMyFolder');
+Route::get('/course/{courseID}/shared-document/{parentFolderID}', 'CourseController@index');
+
+/**
+ * tạo thư mục mới
+ */
+Route::post('/course/{courseID}/my-document/add-folder/{parentFolderID}', 'CourseController@addFolder');
+
+/**
+ * upload tệp lên
+ */
+Route::post('/course/{courseID}/my-document/upload-file/{parentFolderID}', 'CourseController@uploadFile');

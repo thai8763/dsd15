@@ -23,17 +23,13 @@
     <!-- content -->
     @yield('content')
 
-    <!-- footer -->
-    @include('include.footer')
-
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="{{ url('plugins/bootstrap/dist/js/bootstrap.min.js') }}"> </script>
-    <script src="{{ url('vendor/laravel-filemanager/js/lfm.js') }}"></script>
-    <script type="text/javascript" src="{{ url('plugins/ckeditor/ckeditor.js') }}"> </script>
+    <script src="{{ url('js/jquery-3.1.1.min.js') }}"> </script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\LearnCourse;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $courses = LearnCourse::join ('users', 'learn_courses.user_id', '=', 'users.id')
+            -> join ('courses', 'learn_courses.course_id', '=', 'courses.id')
+            -> select ('courses.*')
+            -> where('learn_courses.user_id', '=', Auth::user() -> id)
+            -> get();
+
         return view('home') -> with('courses', $courses);
     }
 }

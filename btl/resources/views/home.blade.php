@@ -19,7 +19,7 @@ Trang chủ
                     <p>
                     Mã học phần: {{ $course -> code }} <br/> Thời gian mở: {{ $course -> created_at }}
                     </p>
-                    <a href="{{ url('/course/'. $course -> name) }}" class="btn btn-info"> Xem thêm </a>
+                    <a href="{{ url('/course/'.$course -> id.'/my-document/folder/0') }}" class="btn btn-info"> Xem thêm </a>
                 </div>
             </div>
         </div>

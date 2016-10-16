@@ -1,3 +1,12 @@
+<!-- banner recommend app -->
+@if(Auth::guest())
+<div class="jumbotron" style="background-color: #0D3349; color: white">
+    <div class="container">
+        <h1> Bách Khoa Drive </h1>
+        <p> Đây là ứng dụng lưu trữ tài liệu học tập dành cho các sinh viên Bách Khoa </p>
+    </div>
+</div>
+@else
 <header class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -20,17 +29,16 @@
 
             <!-- Search -->
             <form class="navbar-form navbar-left">
-                <input type="text" class="form-control" placeholder="Tìm kiếm" size="70">
-                <button type="submit" class="btn btn-info"> <span class="glyphicon glyphicon-search"></span></button>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm" size="70">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-info"> <span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
             </form>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                <li><a href="{{ url('/login') }}"> <span class="glyphicon glyphicon-user"></span> Đăng nhập </a></li>
-                <li><a href="{{ url('/register') }}"> <span class="glyphicon glyphicon-pencil"></span> Đăng ký </a></li>
-                @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <span class="glyphicon glyphicon-user"></span> {{ Auth::user()->name }} <span class="caret"></span>
@@ -52,18 +60,9 @@
                         </li>
                     </ul>
                 </li>
-                @endif
             </ul>
         </div>
     </div>
 </header>
-
-<!-- banner recommend app -->
-@if(Auth::guest())
-<div class="jumbotron" style="background-color: darkviolet; color: white;">
-    <div class="container">
-        <h1> Bách Khoa Drive </h1>
-        <p> Đây là ứng dụng lưu trữ tài liệu học tập dành cho các sinh viên Bách Khoa </p>
-    </div>
-</div>
 @endif
+
